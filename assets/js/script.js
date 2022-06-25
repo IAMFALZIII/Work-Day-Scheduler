@@ -9,11 +9,11 @@ $(document).ready(function () {
         localStorage.setItem(time, text);
     })
 
-    function timeTracker() {
-        var $time2 = moment().hour();
+    function timeTracker() { 
+        var $time2 = moment().format('dddd');
     
         $(".time-block").each(function () {
-            var block = parseInt($(this).attr("id").split("")[1]);
+            var block = parseFloat($(this).attr("id").split("")[1]);
     
             if (block < $time2) {
                 $(this).removeClass("future");
@@ -29,21 +29,19 @@ $(document).ready(function () {
                 $(this).removeClass("present");
                 $(this).removeClass("past");
                 $(this).addClass("future");
-    
             }
         })
     }
     
-    $("#hour8 .description").val(localStorage.getItem("hour8"));
-    $("#hour9 .description").val(localStorage.getItem("hour9"));
-    $("#hour10 .description").val(localStorage.getItem("hour10"));
-    $("#hour11 .description").val(localStorage.getItem("hour11"));
-    $("#hour12 .description").val(localStorage.getItem("hour12"));
-    $("#hour13 .description").val(localStorage.getItem("hour13"));
-    $("#hour14 .description").val(localStorage.getItem("hour14"));
-    $("#hour15 .description").val(localStorage.getItem("hour15"));
-    $("#hour16 .description").val(localStorage.getItem("hour16"));
-    $("#hour17 .description").val(localStorage.getItem("hour17"));
+    $("#hour-9 .description").val(localStorage.getItem("9 AM"));
+    $("#hour-10 .description").val(localStorage.getItem("10 AM"));
+    $("#hour-11 .description").val(localStorage.getItem("11 AM"));
+    $("#hour-12 .description").val(localStorage.getItem("12 PM"));
+    $("#hour-13 .description").val(localStorage.getItem("1 PM"));
+    $("#hour-14 .description").val(localStorage.getItem("2 PM"));
+    $("#hour-15 .description").val(localStorage.getItem("3 PM"));
+    $("#hour-16 .description").val(localStorage.getItem("4 PM"));
+    $("#hour-17 .description").val(localStorage.getItem("5 PM"));
     
     timeTracker();
 })
