@@ -10,10 +10,10 @@ $(document).ready(function () {
     })
 
     function timeTracker() { 
-        var $time2 = moment().format('dddd');
+        var $time2 = moment().hour();
     
         $(".time-block").each(function () {
-            var block = parseFloat($(this).attr("id").split("")[1]);
+            var block = parseFloat($(this).attr("id").split('hour')[1]);
     
             if (block < $time2) {
                 $(this).removeClass("future");
