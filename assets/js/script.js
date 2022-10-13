@@ -13,7 +13,7 @@ $(document).ready(function () {
         var $time2 = moment().hour();
     
         $(".time-block").each(function () {
-            var block = parseFloat($(this).attr("id").split('hour')[1]);
+            var block = parseFloat($(this).attr("id").split('hour')[0]);
     
             if (block < $time2) {
                 $(this).removeClass("future");
